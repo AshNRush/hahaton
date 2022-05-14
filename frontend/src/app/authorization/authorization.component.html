@@ -1,1 +1,17 @@
-<p>authorization works!</p>
+<div class="content">
+  <div class="text">
+    Авторизация
+  </div>
+  <form [formGroup]="form" class="fields">
+    <label for="phone">Номер телефона</label>
+    <input id="phone" type="number" formControlName="phone">
+
+    <label for="name">Ваше имя</label>
+    <input id="name" type="text" formControlName="name">
+
+    <p><input name="type" type="radio" value="quest" formControlName="type">Квест</p>
+    <p><input name="type" type="radio" value="exhibition">Экскурсия</p>
+
+    <button (click)="submit()">Войти</button>
+  </form>
+</div>

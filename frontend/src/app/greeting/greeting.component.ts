@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from "@angular/router";
+import {DataLoaderService} from "../../services/data-loader.service";
 
 @Component({
   selector: 'greeting',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GreetingComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _router: Router) { }
+
+  public okClick() {
+    this._router.navigate(['/authorization'])
+  }
 
   ngOnInit(): void {
   }
-
 }
