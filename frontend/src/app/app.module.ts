@@ -11,19 +11,19 @@ const routes: Routes = [
     children: [
       {
         path: 'greeting',
-        loadChildren: () => import('./greeting/greeting.module').then((m : any) => m.AuthModule)
+        loadChildren: () => import('./greeting/greeting.module').then((m : any) => m.GreetingModule)
       },
       {
         path: 'authorization',
-        loadChildren: () => import('./authorization/authorization.module').then((m : any) => m.LayoutNavigationModule),
+        loadChildren: () => import('./authorization/authorization.module').then((m : any) => m.AuthorizationModule),
       },
       {
-        path: 'map',
-        loadChildren: () => import('./map/map.module').then((m : any) => m.LayoutNavigationModule),
+        path: 'app',
+        loadChildren: () => import('./layout/layout.module').then((m : any) => m.LayoutModule),
       },
       {
         path: '',
-        redirectTo: '/map',
+        redirectTo: '/app/map',
         pathMatch: 'full'
       },
     ]

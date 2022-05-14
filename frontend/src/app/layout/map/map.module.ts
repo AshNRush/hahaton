@@ -1,19 +1,21 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AuthorizationComponent } from './authorization.component';
+import { MapComponent } from './map.component';
 import {RouterModule, Routes} from "@angular/router";
 
 const routes: Routes = [
-  { path: '', component: AuthorizationComponent },
+  {
+    path: '', component: MapComponent
+  },
 ];
 
 @NgModule({
   declarations: [
-    AuthorizationComponent
+    MapComponent
   ],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
   ]
 })
-export class AuthorizationModule { }
+export class MapModule { }

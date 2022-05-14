@@ -1,19 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AuthorizationComponent } from './authorization.component';
+import { ProgressComponent } from './progress.component';
 import {RouterModule, Routes} from "@angular/router";
 
 const routes: Routes = [
-  { path: '', component: AuthorizationComponent },
+  { path: '', component: ProgressComponent },
 ];
 
 @NgModule({
   declarations: [
-    AuthorizationComponent
+    ProgressComponent
   ],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
   ]
 })
-export class AuthorizationModule { }
+export class ProgressModule { }
