@@ -14,6 +14,11 @@ export class ProgressComponent implements OnInit {
   public easters: Point[]
   public username: string
 
+  public get width() {
+    return (this.points.length / this.pointsCount * 100) + '%'
+
+  }
+
   constructor(private _data: DataLoaderService, private _router: Router) {
     this.pointsCount = this._data.pointsCount
     this.points = this._data.unlockedPoints

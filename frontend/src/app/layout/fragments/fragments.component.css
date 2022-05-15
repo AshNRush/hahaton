@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   font-family: "Arial Black";
   margin: 20px;
 }
@@ -10,5 +11,37 @@
   margin: 10px;
   display: flex;
   flex-direction: column;
-  border: 2px solid black;
+  border: 3px solid #FFCC33;
+  border-radius: 20px;
+  padding: 13px;
+  background-color: #fffbec;
+}
+
+.card-header {
+  font-family: Bahnschrift;
+  font-weight: bold;
+  margin-bottom: 3px;
+}
+
+.description {
+  font-family: Roboto;
+  font-size: 15px;
+}
+
+.back-button {
+  align-self: end;
+  outline: none;
+  background-color: white;
+  border-radius: 30%;
+  border: none;
+  box-shadow: inset 1px -1px 0 1px #FFCC33;
+  margin-right: 5px;
+  margin-top: 5px;
+  padding:0 3px;
+}
+
+.back-button>img {
+  width: 25px;
+  height: 25px;
+  margin: 3px;
 }

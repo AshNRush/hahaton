@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   font-family: "Arial Black";
   margin: 20px;
 }
@@ -15,14 +16,89 @@
 
 .username {
   margin-left: 30px;
-  font-family: Roboto;
+  font-family: Bahnschrift;
+  margin-bottom: 25px;
 }
 
 .progress-header {
   margin-left: 30px;
-  font-family: Roboto;
+  font-family: Bahnschrift;
 }
 
 .progress-bar {
   width: 100%;
+}
+
+.back-button {
+  align-self: end;
+  outline: none;
+  background-color: white;
+  border-radius: 30%;
+  border: none;
+  box-shadow: inset 1px -1px 0 1px #FFCC33;
+  margin-right: 5px;
+  margin-top: 5px;
+  padding:0 3px;
+}
+
+.back-button>img {
+  width: 25px;
+  height: 25px;
+  margin: 3px;
+}
+
+.gray-line {
+  margin: 10px auto;
+  width: 80%;
+  height: 20px;
+  background-color: #ececec;
+  border-radius: 20px;
+}
+
+.colored-line {
+  height: 20px;
+  background-color: #FFCC33;
+  border-radius: 20px;
+}
+
+.visited-header {
+  margin-top: 25px;
+  margin-left: 30px;
+  margin-bottom: 10px;
+  font-family: Bahnschrift;
+}
+
+.point {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.orb {
+  width: 15px;
+  height: 15px;
+  border-radius: 30px;
+  background-color: #FFCC33;
+  margin-left: 40px;
+}
+
+.point-name {
+  margin-left: 10px;
+  font-family: Roboto;
+  font-size: 14px;
+}
+
+.easter-header {
+  margin-top: 25px;
+  margin-left: 30px;
+  font-family: Bahnschrift;
+}
+
+.easter-count {
+  margin-left: 40px;
+  margin-bottom: 10px;
+  font-family: "Arial Black";
+  font-size: 40px;
+  color: #FFCC33;
 }

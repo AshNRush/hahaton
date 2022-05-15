@@ -9,10 +9,10 @@ import {Point} from "../models/point.model";
 export class DataLoaderService {
   public appState: 'quest' | 'exhibition' = 'quest'
   public points: Array<Point> = [
-    new Point(1, 'Ельцин-Центр',  60.59132, 56.84475,true, 'Музей первого проезидента России'),
+    new Point(1, 'Памятник Б. Н. Ельцину',  60.59132, 56.84475,true, 'Памятник Ельцину - монумент первому президенту Российской Федерации, советскому партийному и российскому политическому и государственному деятелю, одному из основателей, постсоветской России Борису Ельцину в Екатеринбурге'),
     new Point(2, 'Дом правительства', 60.59413, 56.84191,  false, 'Красивое здание')
   ]
-  public nextHint: string = 'Подсказка'
+  public nextHint: string = 'Вперед! Следующая точка находится справа от входа в Белый дом'
   public pointsCount: number = 20
   public username: string = 'Всеволод'
 

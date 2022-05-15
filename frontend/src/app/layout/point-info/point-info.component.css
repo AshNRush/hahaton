@@ -7,27 +7,24 @@
   box-shadow: inset 0 0 0 5px #FFCC33;
 }
 
-.heading {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  font-family: "Arial Black";
-  margin: 20px;
-}
-
 .card {
-  margin: 10px;
+  margin: 4px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
-  border: 2px solid black;
 }
 
 .back-button {
+  position: absolute;
+  align-self: end;
   outline: none;
   background-color: white;
   border-radius: 30%;
   border: none;
   box-shadow: inset 1px -1px 0 1px #FFCC33;
+  margin-right: 5px;
+  margin-top: 5px;
+  padding:0 3px;
 }
 
 .back-button>img {
@@ -37,6 +34,24 @@
 }
 
 .main-img{
-  border-radius: 10px;
   margin: 10px;
+}
+
+.header {
+  font-size: 20px;
+  font-family: Bahnschrift;
+  align-self: center;
+}
+
+.description {
+  margin-top: 20px;
+  font-family: Roboto;
+  align-self: center;
+  text-align: center;
+}
+
+.bott {
+  margin-top: 30px;
+  align-self: center;
+  width: 70px;
 }

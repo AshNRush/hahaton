@@ -1,10 +1,10 @@
-
-  <div class="content">
-    <div class="heading">
-      <div class="header">{{point?.name}}</div>
-      <button class="back-button" (click)="getBack()"><img src="assets/pics/cross.svg"></button>
-    </div>
-    <img src="assets/pics/yeltsin.png" class="main-img">
-    <p>{{point?.fragment}}</p>
+<div class="content">
+  <button class="back-button" (click)="getBack()"><img src="assets/pics/cross.svg"></button>
+  <img src="assets/pics/yeltsin.png" class="main-img">
+  <div class="card">
+    <div class="header">{{point?.name}}</div>
+    <div class="description">{{point?.fragment}}</div>
+    <img src="assets/pics/bottom.svg" class="bott">
   </div>
+</div>
 

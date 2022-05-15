@@ -1,26 +1,31 @@
 <div class="heading">
   <div class="header">Прогресс</div>
-  <button class="back-button" (click)="getBack()"><-</button>
+  <button class="back-button" (click)="getBack()"><img src="assets/pics/cross.svg"></button>
 </div>
 
 <div class="username">
   Имя: {{username}}
 </div>
 <div class="progress-header">
-  Прогресс
+  Выполнение квеста: {{ width }}
 </div>
 <div class="progress-bar">
-  <div class="colored-line"></div>
-  <div class="gray-line"></div>
+  <div class="gray-line">
+    <div class="colored-line" [ngStyle]="{'width': width }"></div>
+  </div>
+</div>
+<div class="visited-header">
+  Посещенные точки
 </div>
 <div *ngFor="let point of points" class="points-list">
-  <div class="point-name">
-    {{point.name}}
+  <div class="point">
+    <div class="orb"></div>
+    <div class="point-name">{{point.name}}</div>
   </div>
 </div>
 <div class="easter-header">
   Пасхалки
 </div>
 <div class="easter-count">
-  0/{{easters}}
+  0/{{easters.length}}
 </div>
