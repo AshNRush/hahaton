@@ -1,0 +1,8 @@
+<div class="heading">
+  <div class="header">Фрагменты</div>
+  <button class="back-button" (click)="getBack()"><-</button>
+</div>
+<div *ngFor="let fragment of fragments" class="card">
+  <div class="card-header">{{getPointName(fragment.pointId)}}</div>
+  <div class="description">{{fragment.text}}</div>
+</div>

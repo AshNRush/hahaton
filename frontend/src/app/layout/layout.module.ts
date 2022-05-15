@@ -9,8 +9,8 @@ const routes: Routes = [
     component: LayoutComponent,
     children: [
       {
-        path: 'hints',
-        loadChildren: () => import('./hints/hints.module').then((m : any) => m.HintsModule)
+        path: 'fragments',
+        loadChildren: () => import('./fragments/fragments.module').then((m : any) => m.FragmentsModule)
       },
       {
         path: 'progress',

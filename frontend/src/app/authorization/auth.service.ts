@@ -1,11 +1,14 @@
 import {Injectable} from "@angular/core";
 import {AuthModel} from "./auth.model";
+import {HttpClient} from "@angular/common/http";
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
   public token: string | null = null
+
+  constructor(private _http: HttpClient) { }
 
   public setToken(data: AuthModel) {
     //ну типа фетч кароче
