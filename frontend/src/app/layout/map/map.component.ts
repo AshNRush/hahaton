@@ -8,9 +8,11 @@ import {Feature} from "ol";
 import {LineString, Point, Polygon} from "ol/geom";
 import VectorLayer from "ol/layer/Vector";
 import VectorSource from "ol/source/Vector";
-import {Control, Zoom} from 'ol/control';
+import { Zoom} from 'ol/control';
 import {Router} from "@angular/router";
 import {DataLoaderService} from "../../services/data-loader.service";
+import {Icon, Style} from "ol/style";
+import {PointInfoComponent} from "../point-info/point-info.component";
 
 @Component({
   selector: 'map',
@@ -40,15 +42,17 @@ export class MapComponent implements OnInit {
     })
 
     for (const point of this._data.unlockedPoints){
-      vectorSource.addFeature(new Feature({
+      let feature = new Feature({
         geometry: new Point([point.lat, point.lon])
+      })
+      feature.setStyle(new Style({
+        image: new Icon({
+          color: '#4263fc',
+          src: '/assets/pics/square.svg',
+          scale: 1,
+        })
       }))
-    }
-
-    for (const point of this._data.lockedPoints){
-      vectorSource.addFeature(new Feature({
-        geometry: new Point([point.lat, point.lon])
-      }))
+      vectorSource.addFeature(feature)
     }
 
     let controls = [
@@ -74,8 +78,20 @@ export class MapComponent implements OnInit {
           source: vectorSource
         })
       ],
-      controls: controls,
+      controls: [],
       target: 'map'
+    });
+
+    this.map.on('click', (evt) => {
+      const feature = this.map.forEachFeatureAtPixel(evt.pixel, (feature) => feature);
+      if (feature) {
+        let geometry = feature.getGeometry()
+        if (geometry instanceof Point){
+          let coords = geometry.getFlatCoordinates()
+          let id = this._data.unlockedPoints.find((point) => point.lat === coords[0] && point.lon === coords[1])?.id
+          this._router.navigate(['/app/point/', id])
+        }
+      }
     });
   }
 }

@@ -4,7 +4,7 @@ export class Point {
   public lat: number
   public lon: number
   public isPassed: boolean
-  public text: string
+  public fragment: string
   public easter: Array<number> | null
   public easterHint: string | null
 
@@ -14,7 +14,7 @@ export class Point {
     this.lat = lat
     this.lon = lon
     this.isPassed = isPassed
-    this.text = text ?? ''
+    this.fragment = text ?? ''
     this.easter = easter ?? null
     this.easterHint = easterHint ?? null
   }

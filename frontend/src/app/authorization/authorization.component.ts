@@ -18,7 +18,7 @@ export class AuthorizationComponent implements OnInit {
     type: ['', [Validators.required]],
   })
 
-  constructor(private _fb: FormBuilder, private _router: Router, private _auth: AuthService) { }
+  constructor(private _fb: FormBuilder, private _router: Router, private _auth: AuthService, private _data: DataLoaderService) { }
 
   ngOnInit(): void {}
 
@@ -30,6 +30,7 @@ export class AuthorizationComponent implements OnInit {
     if(this.form.valid) {
       this._router.navigate(['/app/map'])
       this._auth.setToken(this.toModel())
+      this._data.username = this.form.get('name')?.value
     }
   }
 }

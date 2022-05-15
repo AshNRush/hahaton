@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {DataLoaderService} from "../../services/data-loader.service";
 import {Router} from "@angular/router";
+import {Point} from "../../models/point.model";
 
 @Component({
   selector: 'app-progress',
@@ -8,8 +9,17 @@ import {Router} from "@angular/router";
   styleUrls: ['./progress.component.css']
 })
 export class ProgressComponent implements OnInit {
+  public pointsCount: number
+  public points: Point[]
+  public easters: Point[]
+  public username: string
 
-  constructor(private _data: DataLoaderService, private _router: Router) { }
+  constructor(private _data: DataLoaderService, private _router: Router) {
+    this.pointsCount = this._data.pointsCount
+    this.points = this._data.unlockedPoints
+    this.easters = this._data.getEasters()
+    this.username = this._data.username
+  }
 
   getBack() {
     this._router.navigate(['/app/map'])

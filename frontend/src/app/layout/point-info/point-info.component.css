@@ -1,0 +1,42 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  height: 100%;
+  width: 100%;
+  box-shadow: inset 0 0 0 5px #FFCC33;
+}
+
+.heading {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-family: "Arial Black";
+  margin: 20px;
+}
+
+.card {
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid black;
+}
+
+.back-button {
+  outline: none;
+  background-color: white;
+  border-radius: 30%;
+  border: none;
+  box-shadow: inset 1px -1px 0 1px #FFCC33;
+}
+
+.back-button>img {
+  width: 25px;
+  height: 25px;
+  margin: 3px;
+}
+
+.main-img{
+  border-radius: 10px;
+  margin: 10px;
+}

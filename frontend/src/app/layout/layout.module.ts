@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {RouterModule, Routes} from "@angular/router";
+import { RouterModule, Routes} from "@angular/router";
 import { LayoutComponent } from './layout.component';
 
 const routes: Routes = [
@@ -19,6 +19,10 @@ const routes: Routes = [
       {
         path: 'map',
         loadChildren: () => import('./map/map.module').then((m : any) => m.MapModule)
+      },
+      {
+        path: 'point/:id',
+        loadChildren: () => import('./point-info/point-info.module').then((m : any) => m.PointInfoModule)
       },
     ],
   },

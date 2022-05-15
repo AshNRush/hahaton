@@ -12,3 +12,17 @@
   flex-direction: column;
   border: 2px solid black;
 }
+
+.username {
+  margin-left: 30px;
+  font-family: Roboto;
+}
+
+.progress-header {
+  margin-left: 30px;
+  font-family: Roboto;
+}
+
+.progress-bar {
+  width: 100%;
+}

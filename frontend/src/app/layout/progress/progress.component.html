@@ -3,3 +3,24 @@
   <button class="back-button" (click)="getBack()"><-</button>
 </div>
 
+<div class="username">
+  Имя: {{username}}
+</div>
+<div class="progress-header">
+  Прогресс
+</div>
+<div class="progress-bar">
+  <div class="colored-line"></div>
+  <div class="gray-line"></div>
+</div>
+<div *ngFor="let point of points" class="points-list">
+  <div class="point-name">
+    {{point.name}}
+  </div>
+</div>
+<div class="easter-header">
+  Пасхалки
+</div>
+<div class="easter-count">
+  0/{{easters}}
+</div>

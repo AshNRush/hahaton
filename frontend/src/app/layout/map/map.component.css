@@ -1,30 +1,48 @@
 .content {
+  display: flex;
+  flex-direction: column;
   width: 100%;
   height: 100%;
 }
 
 .hint {
-  width: 100%;
-  height: 10%;
+  position: absolute;
+  align-self: center;
+  top: 10px;
+  min-width: 70%;
+  max-width: 90%;
+  background-color: white;
+  outline-offset: unset;
+  border: solid 3px #FFCC33;
+  border-radius: 20px;
+  font-size: 16px;
+  font-family: Roboto;
+  padding: 10px;
 }
 
 .map-container {
   width: 100%;
-  height: 80%;
+  height: 100%;
 }
 
 .footer {
+  position: absolute;
+  align-self: end;
   display: flex;
   flex-direction: row;
-  height: 10%
+  justify-content: space-around;
+  width: 100%;
+  bottom: 10px;
 }
 
 .footer-button {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: auto;
-  height: auto;
-  flex-grow: 1;
-  border: 2px solid gray;
+  background-color: #FFCC33;
+  font-family: Roboto;
+  font-size: 20px;
+  color: white;
+  border-radius: 20px;
+  padding: 15px 30px;
 }
