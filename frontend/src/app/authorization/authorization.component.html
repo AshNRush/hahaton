@@ -1,17 +1,12 @@
-<div class="content">
+<div class="content" [ngStyle]="{'background-image': 'url(./assets/back.svg)'}">
   <div class="text">
-    Авторизация
+    АВТОРИЗАЦИЯ
   </div>
   <form [formGroup]="form" class="fields">
-    <label for="phone">Номер телефона</label>
-    <input id="phone" type="number" formControlName="phone">
-
-    <label for="name">Ваше имя</label>
-    <input id="name" type="text" formControlName="name">
-
-    <p><input name="type" type="radio" value="quest" formControlName="type">Квест</p>
-    <p><input name="type" type="radio" value="exhibition">Экскурсия</p>
-
-    <button (click)="submit()">Войти</button>
+    <label><input id="phone" type="number" formControlName="phone" placeholder="Номер телефона"></label>
+    <label><input id="name" type="text" formControlName="name" placeholder="Имя"></label>
+    <label><input name="type" type="radio" value="quest" formControlName="type">Квест</label>
+    <label><input name="type" type="radio" value="exhibition">Экскурсия</label>
   </form>
+  <button (click)="submit()">Войти</button>
 </div>
