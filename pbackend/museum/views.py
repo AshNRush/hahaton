@@ -1,8 +1,10 @@
-from django.http import HttpResponse
 from rest_framework import generics
 from . import serializers
 from .models import User, Point
 from django.shortcuts import redirect
+from django.http import HttpResponse
+from django.core.exceptions import ObjectDoesNotExist
+from rest_framework.renderers import JSONRenderer
 
 
 class UserList(generics.ListCreateAPIView):
@@ -34,3 +36,11 @@ def user_add(request, user, point):
     u.passedPoints.add(p)
     print('ok')
     return redirect(f'/user/{user}')
+
+
+def check(request, token):
+    try:
+        User.objects.get(id=token)
+    except ObjectDoesNotExist:
+        return HttpResponse(JSONRenderer().render({'check': False}))
+    return HttpResponse(JSONRenderer().render({'check': True}))

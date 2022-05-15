@@ -7,6 +7,7 @@ urlpatterns = [
     path('user/<int:pk>/', views.UserDetail.as_view()),
     path('points/', views.PointList.as_view()),
     path('useradd/<int:user>/<int:point>/', views.user_add),
+    path('check/<int:token>/', views.check),
     path('point/<int:pk>/', views.PointDetail.as_view()),
 ]
 
