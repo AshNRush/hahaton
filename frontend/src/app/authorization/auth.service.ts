@@ -15,11 +15,11 @@ export class AuthService {
 
   public setToken(data: AuthModel) {
     this._http.post(
-      'http://localhost:8000/users/',
+      'http://localhost:8000/auth/',
       {
         'name': data.name,
         'phone': data.phone
-      }).subscribe((data : any) => {
+      }).subscribe((data: any) => {
       this.token = data.id
     })
   }

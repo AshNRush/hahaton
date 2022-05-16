@@ -11,6 +11,8 @@ import VectorSource from "ol/source/Vector";
 import {Control, Zoom} from 'ol/control';
 import {Router} from "@angular/router";
 import {DataLoaderService} from "../../services/data-loader.service";
+import {HttpClient} from "@angular/common/http";
+import {AuthService} from "../../authorization/auth.service";
 
 @Component({
   selector: 'map',
@@ -22,7 +24,7 @@ export class MapComponent implements OnInit {
   public map : Map = new Map({});
   public hint : string
 
-  constructor(private _router: Router, private _data: DataLoaderService) {
+  constructor(private _router: Router, private _data: DataLoaderService, private _http: HttpClient, private _auth: AuthService) {
     this.hint = this._data.nextHint
   }
 
@@ -39,17 +41,16 @@ export class MapComponent implements OnInit {
       features: []
     })
 
-    for (const point of this._data.unlockedPoints){
-      vectorSource.addFeature(new Feature({
-        geometry: new Point([point.lat, point.lon])
-      }))
-    }
+    this._http
+      .get(`http://localhost:8000/user/${this._auth.token}/`)
+      .subscribe((data: any) => {
+        for (const point of data.passedPoints) {
+          vectorSource.addFeature(new Feature({
+            geometry: new Point([point.lat, point.lon])
+          }))
+        }
+      })
 
-    for (const point of this._data.lockedPoints){
-      vectorSource.addFeature(new Feature({
-        geometry: new Point([point.lat, point.lon])
-      }))
-    }
 
     let controls = [
       new Zoom({

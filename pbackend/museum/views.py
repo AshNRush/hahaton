@@ -5,6 +5,7 @@ from django.shortcuts import redirect
 from django.http import HttpResponse
 from django.core.exceptions import ObjectDoesNotExist
 from rest_framework.renderers import JSONRenderer
+import json
 
 
 class UserList(generics.ListCreateAPIView):
@@ -44,3 +45,20 @@ def check(request, token):
     except ObjectDoesNotExist:
         return HttpResponse(JSONRenderer().render({'check': False}))
     return HttpResponse(JSONRenderer().render({'check': True}))
+
+
+from django.views.decorators.csrf import csrf_exempt
+
+
+@csrf_exempt
+def auth(request):
+    data = json.loads(request.body)
+    name = data['name']
+    phone = data['phone']
+    try:
+        old_user = User.objects.get(name=name, phone=phone)
+    except ObjectDoesNotExist:
+        new_user = User(name=name, phone=phone)
+        new_user.save()
+        return redirect(f'/user/{new_user.id}')
+    return redirect(f'/user/{old_user.id}')

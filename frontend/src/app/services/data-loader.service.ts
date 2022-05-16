@@ -9,7 +9,7 @@ import {Point} from "../models/point.model";
 export class DataLoaderService {
   public appState: 'quest' | 'exhibition' = 'quest'
   public points: Array<Point> = [
-    new Point(1, 'Ельцин-Центр',  60.59132, 56.84475,true, 'Музей первого проезидента России'),
+    new Point(1, 'Ельцин-Центр',  60.59132, 56.84475,true, 'Музей первого президента России'),
     new Point(2, 'Дом правительства', 60.59413, 56.84191,  false, 'Красивое здание')
   ]
   public easterEggs: Array<Point> = []
