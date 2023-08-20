@@ -15,6 +15,9 @@ export class PointInfoComponent implements OnInit {
   constructor(private activateRoute: ActivatedRoute, private _data: DataLoaderService, private _router: Router) {
     this.pointId = activateRoute.snapshot.params['id'];
     this.point = this._data.unlockedPoints.find((point) => point.id == this.pointId)
+    if (this.point === undefined) {
+      this._data.getPoint().subscribe((data : any) => data)
+    }
   }
 
   getBack() {

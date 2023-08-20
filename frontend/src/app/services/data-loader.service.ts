@@ -38,4 +38,8 @@ export class DataLoaderService {
   getEasters() {
     return this.unlockedPoints.filter((point) => point.easter)
   }
+
+  getPoint() {
+    return this._http.get('')
+  }
 }
